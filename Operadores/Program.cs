@@ -1,6 +1,13 @@
 ﻿class Program {
     static void Main(string[] args) {
-        Console.WriteLine("Hello, World!");
+        int x = 0;
+        x += 5; // resultado = 5, mesma coisa que x = x + 5
+        x -= 3; // resultado = 2, mesma coisa que x = x - 5
+        x *= 2; // resultado = 4, mesma coisa que x = x * 5
+        x /= 4; // resultado = 1, mesma coisa que x = x / 5
+
+
+        Console.WriteLine(x);
     }
 }
 
