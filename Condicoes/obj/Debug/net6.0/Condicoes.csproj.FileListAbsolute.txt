@@ -1,0 +1,15 @@
+C:\Users\Manoel\EstudosCs\Condicoes\bin\Debug\net6.0\Condicoes.exe
+C:\Users\Manoel\EstudosCs\Condicoes\bin\Debug\net6.0\Condicoes.deps.json
+C:\Users\Manoel\EstudosCs\Condicoes\bin\Debug\net6.0\Condicoes.runtimeconfig.json
+C:\Users\Manoel\EstudosCs\Condicoes\bin\Debug\net6.0\Condicoes.dll
+C:\Users\Manoel\EstudosCs\Condicoes\bin\Debug\net6.0\Condicoes.pdb
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\Condicoes.csproj.AssemblyReference.cache
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\Condicoes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\Condicoes.AssemblyInfoInputs.cache
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\Condicoes.AssemblyInfo.cs
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\Condicoes.csproj.CoreCompileInputs.cache
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\Condicoes.dll
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\refint\Condicoes.dll
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\Condicoes.pdb
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\Condicoes.genruntimeconfig.cache
+C:\Users\Manoel\EstudosCs\Condicoes\obj\Debug\net6.0\ref\Condicoes.dll
