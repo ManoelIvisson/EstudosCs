@@ -1,0 +1,15 @@
+C:\Users\Manoel\EstudosCs\EstudandoDatas\bin\Debug\net6.0\EstudandoDatas.exe
+C:\Users\Manoel\EstudosCs\EstudandoDatas\bin\Debug\net6.0\EstudandoDatas.deps.json
+C:\Users\Manoel\EstudosCs\EstudandoDatas\bin\Debug\net6.0\EstudandoDatas.runtimeconfig.json
+C:\Users\Manoel\EstudosCs\EstudandoDatas\bin\Debug\net6.0\EstudandoDatas.dll
+C:\Users\Manoel\EstudosCs\EstudandoDatas\bin\Debug\net6.0\EstudandoDatas.pdb
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\EstudandoDatas.csproj.AssemblyReference.cache
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\EstudandoDatas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\EstudandoDatas.AssemblyInfoInputs.cache
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\EstudandoDatas.AssemblyInfo.cs
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\EstudandoDatas.csproj.CoreCompileInputs.cache
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\EstudandoDatas.dll
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\refint\EstudandoDatas.dll
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\EstudandoDatas.pdb
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\EstudandoDatas.genruntimeconfig.cache
+C:\Users\Manoel\EstudosCs\EstudandoDatas\obj\Debug\net6.0\ref\EstudandoDatas.dll
