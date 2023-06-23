@@ -1,0 +1,15 @@
+C:\Users\Manoel\EstudosCs\EstudosExceptions\bin\Debug\net6.0\EstudosExceptions.exe
+C:\Users\Manoel\EstudosCs\EstudosExceptions\bin\Debug\net6.0\EstudosExceptions.deps.json
+C:\Users\Manoel\EstudosCs\EstudosExceptions\bin\Debug\net6.0\EstudosExceptions.runtimeconfig.json
+C:\Users\Manoel\EstudosCs\EstudosExceptions\bin\Debug\net6.0\EstudosExceptions.dll
+C:\Users\Manoel\EstudosCs\EstudosExceptions\bin\Debug\net6.0\EstudosExceptions.pdb
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\EstudosExceptions.csproj.AssemblyReference.cache
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\EstudosExceptions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\EstudosExceptions.AssemblyInfoInputs.cache
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\EstudosExceptions.AssemblyInfo.cs
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\EstudosExceptions.csproj.CoreCompileInputs.cache
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\EstudosExceptions.dll
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\refint\EstudosExceptions.dll
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\EstudosExceptions.pdb
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\EstudosExceptions.genruntimeconfig.cache
+C:\Users\Manoel\EstudosCs\EstudosExceptions\obj\Debug\net6.0\ref\EstudosExceptions.dll
