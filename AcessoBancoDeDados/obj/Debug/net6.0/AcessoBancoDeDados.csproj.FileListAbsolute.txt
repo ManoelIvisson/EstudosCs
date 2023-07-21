@@ -48,3 +48,4 @@ C:\Users\Manoel\EstudosCs\AcessoBancoDeDados\obj\Debug\net6.0\refint\AcessoBanco
 C:\Users\Manoel\EstudosCs\AcessoBancoDeDados\obj\Debug\net6.0\AcessoBancoDeDados.pdb
 C:\Users\Manoel\EstudosCs\AcessoBancoDeDados\obj\Debug\net6.0\AcessoBancoDeDados.genruntimeconfig.cache
 C:\Users\Manoel\EstudosCs\AcessoBancoDeDados\obj\Debug\net6.0\ref\AcessoBancoDeDados.dll
+C:\Users\Manoel\EstudosCs\AcessoBancoDeDados\bin\Debug\net6.0\Dapper.dll
