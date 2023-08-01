@@ -15,7 +15,13 @@ class Program {
             // ExecutarScalar(conexao);
             // ListarCategorias(conexao);
             // CriarCategorias(conexao);
-            LerViews(conexao);
+            // LerViews(conexao);
+            // UmParaUm(conexao);
+            // ConsultasMultiplas(conexao);
+            // SelectIn(conexao);
+            // Like(conexao, "de");
+            Transaction(conexao);
+            ListarCategorias(conexao);
         }
     }   
 
@@ -118,6 +124,110 @@ class Program {
         var categorias = conexao.Query<Categoria>(view);
         foreach (var item in categorias){
             Console.WriteLine($"Id: {item.Id} - Título: {item.Titulo} - Resumo: {item.Resumo}");
+        }
+    }
+    static void UmParaUm(SqlConnection conexao) {
+        var sql = "SELECT * FROM [ItemCarreira] INNER JOIN [Curso] ON [ItemCarreira].[CursoId] = [Curso].[Id]";
+        var itens = conexao.Query<ItemCarreira, Curso, ItemCarreira>(sql, (itemCarreira, curso)=>{
+            itemCarreira.Curso = curso;
+            return itemCarreira;
+        }, splitOn: "Id");
+        foreach (var item in itens) {
+            Console.WriteLine(item.Titulo);
+        }
+    }
+    static void UmParaMuitos(SqlConnection conexao) {
+        var sql = @"SELECT 
+            [Career].[Id],
+            [Career].[Title],
+            [CareerItem].[CareerId],
+            [CareerItem].[Title]
+        FROM 
+            [Career] 
+        INNER JOIN 
+            [CareerItem] ON [CareerItem].[CareerId] = [Career].[Id]
+        ORDER BY
+            [Career].[Title]";
+        var carreiras = new List<Carreira>();
+        var itens = conexao.Query<Carreira, ItemCarreira, Carreira>(sql, (carreira, item)=>{
+            var car = carreiras.Where(x => x.Id == carreira.Id).FirstOrDefault();
+            if (car == null) {
+                car = carreira;
+                car.Itens.Add(item);
+                carreiras.Add(car);
+            } else {
+                car.Itens.Add(item);
+            }
+            return carreira;
+        }, splitOn: "CarreiraId");
+        foreach (var carreira in carreiras) {
+            Console.WriteLine(carreira.Titulo);
+            foreach (var item in carreira.Itens) {
+                Console.WriteLine($" - {item.Titulo}");
+        }
+        }
+    } 
+    static void ConsultasMultiplas(SqlConnection conexao) {
+        var consultas = "SELECT * FROM [Categoria]; SELECT * FROM [Curso]";
+
+        using(var multi = conexao.QueryMultiple(consultas)) {
+            var categorias = multi.Read<Categoria>();
+            var cursos = multi.Read<Curso>();
+
+            foreach (var item in categorias) {
+                Console.WriteLine(item.Titulo);
+            }
+
+            foreach (var item in cursos) {
+                Console.WriteLine(item.Titulo);
+            }
+        }
+    }
+    static void SelectIn(SqlConnection conexao) {
+        var sql = "SELECT * FROM [Categoria] WHERE [Id] In @Id";
+
+        var itens = conexao.Query<Categoria>(sql, new {
+            Id = new[] {
+                "574d7fb2-7d9c-476d-8623-6d56aae19a8b",
+                "d8732e3d-f9c2-4450-b567-97da5852f820"
+            }
+        });
+
+        foreach (var item in itens){
+            Console.WriteLine(item.Titulo);
+        }
+    }
+    static void Like(SqlConnection conexao, string termo) {
+        var sql = "SELECT * FROM [Categoria] WHERE [Titulo] LIKE @exp";
+
+        var itens = conexao.Query<Categoria>(sql, new {
+            exp = $"%{termo}%"
+        });
+
+        foreach (var item in itens){
+            Console.WriteLine(item.Titulo);
+        }
+    }
+    static void Transaction(SqlConnection conexao) {
+        var categoria = new Categoria();
+        categoria.Id = Guid.NewGuid();
+        categoria.Titulo = "Fundamentos de ASP.NET";
+        categoria.Resumo = "Desenvolva para web com ASP.NET";
+        categoria.Url = "ASP-NET";
+        categoria.Ordem = 6;
+        categoria.Descricao = "Muito bom esse curso mermão";
+        categoria.Destaque = false;
+
+        var insertSql = "INSERT INTO [Categoria](Id, Titulo, Resumo, Url, Ordem, Descricao, Destaque) VALUES (@Id, @Titulo, @Resumo, @Url, @Ordem, @Descricao, @Destaque)";
+
+        conexao.Open();
+        using(var transaction = conexao.BeginTransaction()) {
+            var linhas = conexao.Execute(insertSql, new {categoria.Id, categoria.Titulo, categoria.Resumo, categoria.Url, categoria.Ordem, categoria.Descricao, categoria.Destaque}, transaction);
+
+            transaction.Commit();
+            // transaction.Rollback();
+
+            Console.WriteLine($"{linhas} linhas inseridas");
         }
     }
 }
