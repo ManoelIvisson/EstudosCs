@@ -32,5 +32,3 @@ namespace Blog.Telas.TelasDeUsuario {
         }
     }
 }
-
-

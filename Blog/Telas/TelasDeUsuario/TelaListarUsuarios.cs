@@ -27,6 +27,7 @@ namespace Blog.Telas.TelasDeUsuario {
                 }
                 Console.WriteLine("");
             }
+            Console.ReadKey();
         }
     }
 }

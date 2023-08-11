@@ -20,8 +20,12 @@ namespace Blog.Telas.TelasDeUsuario {
                 case "3": 
                     TelaListarUsuario.ListarUsuariosComPerfis();
                 break;
+                case "4": 
+                    TelaDeletarUsuario.DeletarUsuario();
+                break;
                 default: CarregarTela(); break;
             }
+            CarregarTela();
         }
     }
 }

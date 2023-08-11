@@ -1,3 +1,4 @@
+using Blog.Telas.TelasDePerfil;
 using Blog.Telas.TelasDeUsuario;
 
 public static class Menu{
@@ -15,6 +16,7 @@ public static class Menu{
 
         switch (opcao) {
             case "1": MenuUsuario.CarregarTela(); break;
+            case "2": MenuPerfil.CarregarTela(); break;
             case "0": System.Environment.Exit(0); break;
             default:
                 Console.WriteLine("Opção Inválida, voltando ao menu... ");
