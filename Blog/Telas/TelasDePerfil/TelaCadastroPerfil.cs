@@ -33,7 +33,7 @@ namespace Blog.Telas.TelasDePerfil {
             var opcao = Convert.ToChar(Console.ReadLine()!);
             switch (opcao){
                 case 'S': 
-                    VinculoUsuarioPerfil.VunculoUsuarioPerfil(0, perfil.Id);
+                    VinculoUsuarioPerfil.VuncularUsuarioPerfil(0, perfil.Id);
                 break;
                 default: 
                     MenuPerfil.CarregarTela();

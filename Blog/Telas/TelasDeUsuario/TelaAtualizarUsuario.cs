@@ -1,16 +1,15 @@
 using Blog.Models;
 using Blog.Repositories;
-using Dapper;
+using Blog.Telas.TelaDeVerificacao;
 
 namespace Blog.Telas.TelasDeUsuario {
     public static class TelaAtualizarUsuario {
         public static void AtualizarUsuario(){
             Console.Clear();
             Console.WriteLine("=-=-=-=-=-=-=-= Atualização de Usuário =-=-=-=-=-=-=-=");
-            Console.Write("Digite seu email: ");
-            var email = Console.ReadLine();
-            Console.Write("Digite sua senha: ");
-            var senha = Console.ReadLine();
+            var repositorio = new Repositorio<Usuario>();
+            var usuario = repositorio.Get(Verificacao.CarregarTelaUsuario());
+
             Console.WriteLine("Escolha o você deseja atualizar: ");
             Console.WriteLine("1 - Nome");
             Console.WriteLine("2 - E-mail");
@@ -18,9 +17,6 @@ namespace Blog.Telas.TelasDeUsuario {
             Console.WriteLine("4 - Bio");
             var opcao = Console.ReadLine();
             var alteracao = "";
-
-            var repositorio = new Repositorio<Usuario>();
-            var usuario = repositorio.Get(VerficarUsuario(email, senha));
 
             switch (opcao)
             {
@@ -48,21 +44,6 @@ namespace Blog.Telas.TelasDeUsuario {
             }
 
             repositorio.Atualizar(usuario);
-        }
-
-        public static int VerficarUsuario(string? email, string? senha){
-            var sql = "SELECT [ID] FROM [Usuario] WHERE [Email] = @Email AND [SenhaHash] = @Senha";
-
-            var id = BancoDeDados.Conexao.Query<Usuario>(sql, new {
-                Email = email,
-                Senha = senha
-            });
-
-            foreach (var item in id){
-                return item.Id;
-            }
-
-            return 0;
         }
     }
 }

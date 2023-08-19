@@ -1,6 +1,5 @@
 using Blog.Models;
 using Blog.Repositories;
-using Dapper;
 
 namespace Blog.Telas.TelasDeUsuario {
     public static class TelaListarUsuario {

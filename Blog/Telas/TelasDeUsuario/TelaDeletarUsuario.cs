@@ -1,5 +1,6 @@
 using Blog.Models;
 using Blog.Repositories;
+using Blog.Telas.TelaDeVerificacao;
 using Dapper;
 
 namespace Blog.Telas.TelasDeUsuario {
@@ -9,15 +10,16 @@ namespace Blog.Telas.TelasDeUsuario {
             Console.WriteLine("=-=-=-=-=-=-=-= Deletar Usuário =-=-=-=-=-=-=-=");
             var repositorio = new Repositorio<Usuario>();
 
-            Console.Write("Digite seu email: ");
-            var email = Console.ReadLine();
-            Console.Write("Digite sua senha: ");
-            var senha = Console.ReadLine();
-            int id = TelaAtualizarUsuario.VerficarUsuario(email, senha);
+            int id = Verificacao.CarregarTelaUsuario();
 
-            repositorio.Deletar(id);
-            DeletarPerfisVinculados(id);
-            Console.WriteLine("Usuario Deletado com sucesso");
+            try {
+                repositorio.Deletar(id);
+                DeletarPerfisVinculados(id);
+                Console.WriteLine("Usuario Deletado com sucesso");
+            } catch (Exception ex) {
+                Console.WriteLine("Não foi possível deletar o usuário");
+                Console.WriteLine(ex);
+            }
             Console.ReadKey();
         }
 
