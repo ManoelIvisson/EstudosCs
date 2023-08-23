@@ -11,8 +11,10 @@ namespace Blog.Data {
         public DbSet<Usuario>? Usuarios { get; set; }
         // public DbSet<UsuarioPerfil>? UsuarioPerfis { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder opcoes)
-        => opcoes.UseSqlServer(@"Server=.\SQLEXPRESS;Database=Blog;Integrated Security=SSPI;TrustServerCertificate=True");
+        protected override void OnConfiguring(DbContextOptionsBuilder opcoes) {
+            opcoes.UseSqlServer(@"Server=.\SQLEXPRESS;Database=Blog;Integrated Security=SSPI;TrustServerCertificate=True");
+            // opcoes.LogTo(Console.WriteLine);
+        }
         
     }
 }

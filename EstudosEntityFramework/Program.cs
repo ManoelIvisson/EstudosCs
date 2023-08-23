@@ -6,33 +6,44 @@ Console.WriteLine("Hello, World!");
 
 using var contexto = new BlogDataContext();
 
-var usuario = new Usuario {
-  Nome = "Manoel do Pastel",
-  Email = "manoelpastel@exemplo.com",
-  SenhaHash = "senha",
-  Bio = "Gosto de Pastel",
-  Imagem = "https://...",
-  Slug = "manoel-do-pastel"  
-};
+var postagens = contexto.Postagens
+            .AsNoTracking()
+            .Include(x => x.Autor)
+            .Include(x => x.Categoria)
+            .OrderByDescending(x => x.DataUltimaAtualizacao)
+            .ToList();
 
-var categoria = new Categoria {
-    Nome = "Backend",
-    Slug = "backend"
-};
+foreach (var item in postagens){
+    Console.WriteLine($"{item.Titulo} escrito por {item.Autor?.Nome} na categoria {item.Categoria?.Nome}");
+}
 
-var postagem = new Postagem {
-    Categoria = categoria,
-    Autor = usuario,
-    Titulo = "Backend básico",
-    Resumo = "Resumindo... ",
-    Corpo = "Opa",
-    Slug = "backend-basico",
-    DataCriacao = DateTime.Now,
-    DataUltimaAtualizacao = DateTime.Now
-};
+// var usuario = new Usuario {
+//   Nome = "Manoel do Pastel",
+//   Email = "manoelpastel@exemplo.com",
+//   SenhaHash = "senha",
+//   Bio = "Gosto de Pastel",
+//   Imagem = "https://...",
+//   Slug = "manoel-do-pastel"  
+// };
 
-contexto.Postagens.Add(postagem);
-contexto.SaveChanges();
+// var categoria = new Categoria {
+//     Nome = "Backend",
+//     Slug = "backend"
+// };
+
+// var postagem = new Postagem {
+//     Categoria = categoria,
+//     Autor = usuario,
+//     Titulo = "Backend básico",
+//     Resumo = "Resumindo... ",
+//     Corpo = "Opa",
+//     Slug = "backend-basico",
+//     DataCriacao = DateTime.Now,
+//     DataUltimaAtualizacao = DateTime.Now
+// };
+
+// contexto.Postagens.Add(postagem);
+// contexto.SaveChanges();
 
 // using (var contexto = new BlogDataContext()) {
     // Criar(Create)
