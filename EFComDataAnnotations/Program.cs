@@ -6,17 +6,32 @@ Console.WriteLine("Hello, World!");
 
 using var contexto = new BlogDataContext();
 
-var postagens = contexto.Postagens
-            .AsNoTracking()
-            .Include(x => x.Autor)
-            .Include(x => x.Categoria)
-            .OrderByDescending(x => x.DataUltimaAtualizacao)
-            .ToList();
+//Trabalhando com subconjuntos
 
-foreach (var item in postagens){
-    Console.WriteLine($"{item.Titulo} escrito por {item.Autor?.Nome} na categoria {item.Categoria?.Nome}");
-}
+//Atualizar(Update)
+// var postagem = contexto.Postagens
+//                 .Include(x => x.Autor)
+//                 .OrderByDescending(x => x.DataUltimaAtualizacao)
+//                 .FirstOrDefault();
 
+// postagem.Autor.Nome = "Manoel do Pastel 2";
+
+// contexto.Postagens.Update(postagem);
+// contexto.SaveChanges();
+
+//Ler(Read)
+// var postagens = contexto.Postagens
+//             .AsNoTracking()
+//             .Include(x => x.Autor)
+//             .Include(x => x.Categoria)
+//             .OrderByDescending(x => x.DataUltimaAtualizacao)
+//             .ToList();
+
+// foreach (var item in postagens){
+//     Console.WriteLine($"{item.Titulo} escrito por {item.Autor?.Nome} na categoria {item.Categoria?.Nome}");
+// }
+
+//Criar(Create)
 // var usuario = new Usuario {
 //   Nome = "Manoel do Pastel",
 //   Email = "manoelpastel@exemplo.com",
