@@ -29,6 +29,20 @@ namespace Blog.Data.Mappings {
             
             builder.HasIndex(x => x.Email, "IX_Usuario_Email").IsUnique();
             builder.HasIndex(x => x.Slug, "IX_Usuario_Slug").IsUnique();
+
+            builder.HasMany(x => x.Perfis)
+                .WithMany(x => x.Usuarios)
+                .UsingEntity<Dictionary<string, object>>(
+                    "UsuarioPerfil",
+                    usuario => usuario.HasOne<Perfil>()
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .HasConstraintName("FK_UsuarioPerfil_UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    perfil => perfil.HasOne<Usuario>()
+                        .WithMany()
+                        .HasForeignKey("PerfilId")
+                        .HasConstraintName("FK_UsuarioPerfil_PerfilId"));
         }
     }
 }
