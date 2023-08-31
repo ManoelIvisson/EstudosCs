@@ -9,7 +9,7 @@ namespace Blog.Data {
         public DbSet<Postagem> Postagens { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder opcoes)
-        => opcoes.UseSqlServer(@"Server=.\SQLEXPRESS;Database=Blog;Integrated Security=SSPI;TrustServerCertificate=True");
+        => opcoes.UseSqlServer(@"Server=.\SQLEXPRESS;Database=BlogMigracao;Integrated Security=SSPI;TrustServerCertificate=True");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder){
            modelBuilder.ApplyConfiguration(new CategoriaMap());
