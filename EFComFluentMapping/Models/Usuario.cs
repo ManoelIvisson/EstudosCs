@@ -10,6 +10,7 @@ namespace Blog.Models {
         public string? SenhaHash { get; set; }
         public string? Bio { get; set; }
         public string? Imagem { get; set; }
+        public string? GitHub { get; set; }
         public string? Slug { get; set; }
 
         public List<Postagem> Postagens { get; set; }

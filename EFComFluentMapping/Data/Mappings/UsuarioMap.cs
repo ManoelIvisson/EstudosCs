@@ -20,6 +20,7 @@ namespace Blog.Data.Mappings {
             builder.Property(x => x.SenhaHash);
             builder.Property(x => x.Bio);
             builder.Property(x => x.Imagem);
+            builder.Property(x => x.GitHub);
 
             builder.Property(x => x.Slug)
                 .IsRequired()
