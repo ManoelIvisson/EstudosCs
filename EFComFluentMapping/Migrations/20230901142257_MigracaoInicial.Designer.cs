@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFComFluentMapping.Migrations
 {
     [DbContext(typeof(BlogDataContext))]
-    [Migration("20230831142104_AdicionadoCampoGitHubNoUsuario")]
-    partial class AdicionadoCampoGitHubNoUsuario
+    [Migration("20230901142257_MigracaoInicial")]
+    partial class MigracaoInicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

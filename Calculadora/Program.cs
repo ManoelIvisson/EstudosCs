@@ -125,10 +125,10 @@
 
         Console.WriteLine("");
 
-        double resultado = 1;
-        for (double i = 1; i <= numero2; i++) {
-            resultado *= numero1;
-        }
+        double resultado = Math.Pow(numero1, numero2);
+        // for (double i = 1; i <= numero2; i++) {
+        //     resultado *= numero1;
+        // }
 
         Console.WriteLine($"O resultado da potenciação é {resultado}");
         
